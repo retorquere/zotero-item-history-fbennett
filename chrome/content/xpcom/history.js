@@ -34,6 +34,7 @@ ZoteroItemHistory = function () {
 	this.hasSeenStack = false;
 
 	this.Zotero = Components.classes['@zotero.org/Zotero;1'].getService().wrappedJSObject;
+	var Zotero = this.Zotero;
 
 	this.db = new this.Zotero.DBConnection("zotero-item-history");
 
