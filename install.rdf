@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>zotero-item-history@mystery-lab.com</em:id>
+    <em:type>2</em:type>
+    <em:name>Zotero Item History</em:name>
+    <em:version>0.1</em:version>
+    <em:creator>Frank Bennett</em:creator>
+    <em:contributor></em:contributor>
+    <em:description>Extends the Zotero reference manager with per-collection browsing history.</em:description>
+    <em:aboutURL>chrome://zotero-item-history/content/about.xul</em:aboutURL>
+    <em:optionsURL>chrome://zotero-item-history/content/options.xul</em:optionsURL>
+    <em:unpack>true</em:unpack>
+    <em:targetApplication>
+	  <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
+        <em:minVersion>3.6</em:minVersion>
+        <em:maxVersion>4.0.*</em:maxVersion>
+	  </Description>
+    </em:targetApplication>
+    <em:targetApplication>
+	  <Description>
+        <em:id>zotero@chnm.gmu.edu</em:id> <!-- Zotero -->
+        <em:minVersion>2.1</em:minVersion>
+        <em:maxVersion>2.1.*</em:maxVersion>
+	  </Description>
+    </em:targetApplication>
+  </Description>
+</RDF>
