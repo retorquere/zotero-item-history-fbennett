@@ -43,8 +43,6 @@ ZoteroItemHistory.prototype.windowInit = function (window, document) {
 
 	var Zotero = this.Zotero;
 	
-	//dump("YYY Setting up window: "+this.windowID+"\n");
-
 	/*
 	 * If nav tabs do not exist, create them and set references
 	 *  in component.

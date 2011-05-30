@@ -31,6 +31,8 @@
 ZoteroItemHistory.prototype.itemTreeClickListener = function () {
 
 	if (!this.windowsSeen.iTree[this.windowID]) {
+
+		var Zotero = this.Zotero;
 		
 		try {
 			var setCollectionHistoryAddress = this.setCollectionHistoryAddress;

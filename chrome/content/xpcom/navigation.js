@@ -36,8 +36,6 @@ ZoteroItemHistory.prototype.goNext = function () {
 
 
 ZoteroItemHistory.prototype.goPrev = function () {
-	dump("YYY Running goPrev()\n");
-	try{
 	// Select and view previous item
 	var history = this.history[this.LID][this.CID];
 	if (this.index > 0) {
@@ -46,9 +44,6 @@ ZoteroItemHistory.prototype.goPrev = function () {
 		this.index = history.length - 1;
 	}
 	this.showInCollection();
-	} catch (e) {
-		dump("YYY ZoteroItemHistory: [goPrev]" + e + "\n");
-	}
 };
 
 ZoteroItemHistory.prototype.goTo = function (menunode) {
@@ -61,74 +56,73 @@ ZoteroItemHistory.prototype.goTo = function (menunode) {
 
 ZoteroItemHistory.prototype.showInCollection = function () {
 	try {
-	var history = this.history[this.LID][this.CID];
-	var cTree = this.ZoteroPane_Local.collectionsView;
-	var itemID = parseInt(history[this.index], 10);
-	// If a single id is argument, Zotero.Items.get() returns the object
-	// directly.
-	var item = this.Zotero.Items.get([itemID]);
-	// ... but that doesn't seem to be the case.
-	if (item.length) {
-		item = item[0];
-	}
-	// dump("YYY libraryID=" + this.LID + ", collectionID=" + this.CID + ", itemID=" + itemID + "\n");
+		var Zotero = this.Zotero;
+		var history = this.history[this.LID][this.CID];
+		var cTree = this.ZoteroPane_Local.collectionsView;
+		var itemID = parseInt(history[this.index], 10);
+		// If a single id is argument, Zotero.Items.get() returns the object
+		// directly.
+		var item = this.Zotero.Items.get([itemID]);
+		// ... but that doesn't seem to be the case.
+		if (item.length) {
+			item = item[0];
+		}
 
-	var isSearch = false;
+		var isSearch = false;
 
-	var iTree = this.ZoteroPane_Local.itemsView;
-	if (this.CID) {
-		var type = this.CID.slice(0, 1);
-		var cID = parseInt(this.CID.slice(1), 10);
-		if ("C" === type) {
-			// Collection
-			var currentCollection = cTree.getSelectedCollection(true);
-			if (currentCollection !== cID && item.inCollection(cID)) {
-				cTree.rememberSelection(this.CID);
-				iTree = this.ZoteroPane_Local.itemsView;
-			} else if (currentCollection === cID && !item.inCollection(cID)) {
-				cTree.selectLibrary(this.LID);
-				iTree = this.ZoteroPane_Local.itemsView;
-			}
-		} else {
-			// Saved search
-			var currentLocationId = cTree.saveSelection();
-			var currentType = currentLocationId.slice(0, 1);
-			var hasItem;
-			if (currentType === "S") {
-				hasItem = iTree.selectItem(itemID);
-				//dump("YYY   hasItem[1]="+hasItem+", for itemID=" + itemID + "title: " + item.getField("title") + "\n");
-				if (!hasItem) {
-					// Try Library or group
+		var iTree = this.ZoteroPane_Local.itemsView;
+		if (this.CID) {
+			var type = this.CID.slice(0, 1);
+			var cID = parseInt(this.CID.slice(1), 10);
+			if ("C" === type) {
+				// Collection
+				var currentCollection = cTree.getSelectedCollection(true);
+				if (currentCollection !== cID && item.inCollection(cID)) {
+					cTree.rememberSelection(this.CID);
+					iTree = this.ZoteroPane_Local.itemsView;
+				} else if (currentCollection === cID && !item.inCollection(cID)) {
 					cTree.selectLibrary(this.LID);
 					iTree = this.ZoteroPane_Local.itemsView;
-					iTree._treebox.invalidate();
 				}
 			} else {
-				// Return to search?
-				cTree.rememberSelection(this.CID);
-				iTree = this.ZoteroPane_Local.itemsView;
-				iTree.refresh();
-				hasItem = iTree.selectItem(itemID);
-				// dump("YYY   hasItem[2]="+hasItem+", for itemID=" + itemID + ", title: " + item.getField("title") + "\n");
-				if (!hasItem) {
-					// Back to Library or group
-					cTree.selectLibrary(this.LID);
+				// Saved search
+				var currentLocationId = cTree.saveSelection();
+				var currentType = currentLocationId.slice(0, 1);
+				var hasItem;
+				if (currentType === "S") {
+					hasItem = iTree.selectItem(itemID);
+					if (!hasItem) {
+						// Try Library or group
+						cTree.selectLibrary(this.LID);
+						iTree = this.ZoteroPane_Local.itemsView;
+						iTree._treebox.invalidate();
+					}
+				} else {
+					// Return to search?
+					cTree.rememberSelection(this.CID);
 					iTree = this.ZoteroPane_Local.itemsView;
-					iTree._treebox.invalidate();
+					iTree.refresh();
+					hasItem = iTree.selectItem(itemID);
+					if (!hasItem) {
+						// Back to Library or group
+						cTree.selectLibrary(this.LID);
+						iTree = this.ZoteroPane_Local.itemsView;
+						iTree._treebox.invalidate();
+					}
 				}
 			}
 		}
-	}
-	cTree._treebox.focused = false;
-	iTree._treebox.focused = true;
-	iTree.selectItem(itemID);
-	this.setButtonStates();
+		cTree._treebox.focused = false;
+		iTree._treebox.focused = true;
+		iTree.selectItem(itemID);
+		this.setButtonStates();
 	} catch (e) {
 		this.Zotero.debug("ZoteroItemHistory [showInCollection]: " + e);
 	}
 };
 
 ZoteroItemHistory.prototype.buildHome = function (menu) {
+	var Zotero = this.Zotero;
 	for (var i = menu.childNodes.length - 1; i > -1; i += -1) {
 		menu.removeChild(menu.childNodes.item(i));
 	}
@@ -165,6 +159,7 @@ ZoteroItemHistory.prototype.removeEntry = function () {
 
 
 ZoteroItemHistory.prototype.selectAll = function (ZoteroPane_Local) {
+	var Zotero = this.Zotero;
 	var history = this.history[ZoteroItemHistory.LID][ZoteroItemHistory.CID];
 	// Determine if all items are available in the current collection (?)
 	var localOk = true;
@@ -261,6 +256,7 @@ ZoteroItemHistory.prototype.initHistoryOk = function (CID) {
 
 ZoteroItemHistory.prototype.addToHistory = function (itemID) {
 	if (this.initHistoryOk()) {
+		var Zotero = this.Zotero;
 		var history = this.history[this.LID][this.CID];
 		var indexPos = history.indexOf("" + itemID);
 		if (!history.length || indexPos === -1) {
@@ -280,16 +276,11 @@ ZoteroItemHistory.prototype.addToHistory = function (itemID) {
 
 			// TODO
 			var CIDlist = [this.CID];
-			dump("YYY CID=" + this.CID + "\n");
 			if (this.CID && this.CID.slice(0, 1) === "C") {
 				var collectionID = this.CID.slice(1);
-				dump("YYY collectionID=" + collectionID + "\n");
 				var collection = this.Zotero.Collections.get(collectionID);
-				dump("YYY collection=" + collection + "\n");
-				dump("YYY collection.parent=" + collection.parent + "\n");
 				while (collection.parent) {
 					collectionID = collection.parent;
-					dump("YYY collection.parent=" + collection.parent+"\n");
 					var collection = this.Zotero.Collections.get(collectionID);
 					CIDlist.push("C" + collectionID);
 				}

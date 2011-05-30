@@ -26,6 +26,7 @@
 /*global ZoteroItemHistory: true */
 
 ZoteroItemHistory.prototype.getVolIssueJournal = function (item) {
+	var Zotero = this.Zotero;
 	var fieldID;
 	fieldID = this.Zotero.ItemFields.getFieldIDFromTypeAndBase(item.itemTypeID, 'volume');
 	var itemVol = item.getField(fieldID);
@@ -75,6 +76,7 @@ ZoteroItemHistory.prototype.getVolIssueJournal = function (item) {
 
 
 ZoteroItemHistory.prototype.getYear = function (item) {
+	var Zotero = this.Zotero;
 	var fieldID = this.Zotero.ItemFields.getFieldIDFromTypeAndBase(item.itemTypeID, 'date');
 	return item.getField(fieldID, false);
 };
@@ -82,6 +84,7 @@ ZoteroItemHistory.prototype.getYear = function (item) {
 
 ZoteroItemHistory.prototype.buildItemMenu = function (menu, itemID) {
 	var slots, itemSlots, i, ilen, j, jlen, k, klen;
+	var Zotero = this.Zotero;
 
 	var document = menu.ownerDocument;
 	var item = this.Zotero.Items.get(itemID);

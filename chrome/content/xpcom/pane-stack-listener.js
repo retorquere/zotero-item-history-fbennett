@@ -32,6 +32,8 @@ ZoteroItemHistory.prototype.paneStackListener = function () {
 
 	if (!this.windowsSeen.pStack[this.windowID]) {
 
+		var Zotero = this.Zotero;
+
 		try {
 			var stack = this.document.getElementById("zotero-pane-stack");
 			var window = this.window;

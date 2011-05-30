@@ -6,6 +6,8 @@ ZoteroItemHistory.prototype.collectionTreeClickListener = function () {
 
 	if (!this.windowsSeen.cTree[this.windowID]) {
 
+		var Zotero = this.Zotero;
+
 		try {
 			var collectionTree = this.document.getElementById("zotero-collections-tree");
 			var setCollectionHistoryAddress = this.setCollectionHistoryAddress;

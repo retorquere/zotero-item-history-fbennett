@@ -26,7 +26,8 @@
 /*global ZoteroItemHistory: true */
 
 ZoteroItemHistory.prototype.purgeMissingGroups = function () {
-	//dump("YYY running purgeMissingGroups()\n");
+
+	var Zotero = this.Zotero;
 
 	try {
 		// Get a list of libraryIDs for all available groups.
@@ -35,7 +36,6 @@ ZoteroItemHistory.prototype.purgeMissingGroups = function () {
 		for (var i = 0, ilen = availableGroups.length; i < ilen; i += 1) {
 			libraryIDs.push(availableGroups[i].libraryID);
 		}
-		//dump("YYY libraryIDs=" + libraryIDs + "\n");
 		
 		// Check that the steps table exists
 		var sql = "SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='steps'";
