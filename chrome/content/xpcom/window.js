@@ -252,14 +252,14 @@ ZoteroItemHistory.prototype.itemDeletionListener = {
 			for (i = 0, ilen = bundles.length; i < ilen; i += 1) {
 				LID = bundles[i].libraryID;
 				CID = bundles[i].collectionID;
-				history = ZoteroItemHistory.history[LID][CID];
-				// Not sure if this is really necessary.
+				// This does appear to be necessary.
 				if (!LID) {
 					LID = null;
 				}
 				if (!CID) {
 					CID = null;
 				}
+				history = ZoteroItemHistory.history[LID][CID];
 				for (var j = ids.length - 1; j > -1; j += -1) {
 					index = history.indexOf("" + ids[j]);
 					if (index > -1) {
