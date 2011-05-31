@@ -8,11 +8,59 @@
   <groupbox align="center" orient="horizontal">
     <vbox>
       <text value="Zotero Item History" style="font-weight: bold; font-size: x-large;"/>
-      <text value="&version; 1.0"/>
+      <text value="&version; 0.2"/>
       <separator class="thin"/>
       <text value="&createdBy;" style="font-weight: bold;"/>
       <text value="Frank G. Bennett, Jr."/>
+      <separator class="groove"/>
+	  <label value="Overview" style="font-weight: bold;"/>
       <separator class="thin"/>
+	  <description style="width: 600px;">
+Zotero Item History maintains a record of items visited from a given Zotero library or collection, or saved search. The tool is meant to be unintrusive, but helpful in time of need.
+	  </description>
+      <separator class="thin"/>
+	  <label value="How it works" style="font-weight: bold;"/>
+      <separator class="thin"/>
+	  <hbox>
+		<vbox>
+		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
+			History lists are selected automatically by clicking on a library,
+			collection, or saved search in the left panel.
+		  </description>
+		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
+			Items are added to a history list (once only) when they are opened.
+		  </description>
+		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
+			Navigation via the Related tab (in the right pane) adds
+			the target item to
+			the <span style="font-style:italic;">current</span>
+			history list, even if the target is not in the current
+			collection or saved search.
+		  </description>
+		</vbox>
+		<vbox>
+		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
+			Enter an existing list
+			by clicking on the <image src="chrome://zotero-item-history/skin/prev.png"/> icon.
+		  </description>
+		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
+			Left-clicking the
+			<image src="chrome://zotero-item-history/skin/gohome.png"/>
+			icon opens a scrollable list of items in the history
+			list. The
+			<image src="chrome://zotero-item-history/skin/next.png"/>
+			and
+			<image src="chrome://zotero-item-history/skin/prev.png"/>
+			icons provide sequential forward and back navigation.
+		  </description>
+		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
+			A collection history can be selected or cleared via the
+			context menu on the
+			<image src="chrome://zotero-item-history/skin/gohome.png"/>
+			icon (but if you are reading this, you already know that).
+		  </description>
+		</vbox>
+	  </hbox>
     </vbox>
   </groupbox>
 </dialog>

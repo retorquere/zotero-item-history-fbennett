@@ -120,8 +120,16 @@ ZoteroItemHistory.prototype.windowInit = function (window, document) {
 		purger.setAttribute("label", "Clear collection history");
 		purger.setAttribute("onclick", "ZoteroItemHistory.clearCollectionHistory();");
 		globalcontextmenu.appendChild(purger);
-		popupset.appendChild(globalcontextmenu);
 		
+		var help = document.createElement("menuitem");
+		help.setAttribute("onclick", "window.openDialog('chrome://zotero-item-history/content/about.xul', 'about', '')");
+		help.setAttribute("label", "About Zotero Item History");
+		var helpsep = document.createElement("menuseparator");
+		globalcontextmenu.appendChild(helpsep);
+		globalcontextmenu.appendChild(help);
+
+		popupset.appendChild(globalcontextmenu);
+
 		var gohome = this.buttons[this.buttonNumberFromName.gohome];
 		gohome.setAttribute("context", "zotero-item-history-global-context");
 		gohome.setAttribute("popup", "zotero-item-history-menu");
