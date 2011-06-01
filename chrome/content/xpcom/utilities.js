@@ -42,7 +42,6 @@ ZoteroItemHistory.prototype.buttonNameFromNumber = {
 
 
 ZoteroItemHistory.prototype.enableButton = function (name, enable) {
-	dump("YYY Setting button: "+name+" to "+enable+"\n");
 	if ("boolean" !== typeof enable) {
 		throw "Second argument to enableButton() must be boolean true or false.";
 	}
@@ -75,27 +74,30 @@ ZoteroItemHistory.prototype.setButtonAction = function (nick, button, functionNa
 
 
 ZoteroItemHistory.prototype.disableAllButtons = function () {
-	for (var i = 0, ilen = this.buttons.length; i < ilen; i += 1) {
-		this.enableButton(this.buttonNameFromNumber[i], false);
+	var buttonNames = ["next", "prev"];
+	for (var i = 0, ilen = buttonNames.length; i < ilen; i += 1) {
+		var buttonName = buttonNames[i];
+		this.enableButton(buttonName, false);
 	}
-	this.buttons[this.buttonNumberFromName.gohome].setAttribute("tooltiptext", "");
 };
 
 
 ZoteroItemHistory.prototype.setButtonStates = function () {
-	dump("YYY Setting button states\n");
-	var historyLength = this.history[this.LID][this.CID].length;
-	if (historyLength === 0) {
+
+	this.buttons[this.buttonNumberFromName.gohome]
+		.setAttribute("tooltiptext", ZoteroItemHistory.collectionName);
+	
+	var historyLength;
+	if ("undefined" !== typeof this.CID) {
+		var historyLength = this.history[this.LID][this.CID].length;
+	}
+	if ("undefined" === typeof this.CID || historyLength === 0) {
 		this.disableAllButtons();
 	} else if (historyLength === 1) {
-		this.enableButton("gohome", false);
-		this.buttons[this.buttonNumberFromName.gohome].setAttribute("tooltiptext", "");
 		this.enableButton("prev", true);
 		this.enableButton("next", false);
 	} else {
 		if (this.index === -1) {
-			this.enableButton("gohome", false);
-			this.buttons[this.buttonNumberFromName.gohome].setAttribute("tooltiptext", "");
 			this.enableButton("next", false);
 			this.enableButton("prev", true);
 		} else {
@@ -109,9 +111,6 @@ ZoteroItemHistory.prototype.setButtonStates = function () {
 			} else {
 				this.enableButton("prev", true);
 			}
-			this.enableButton("gohome", true);
-			this.buttons[this.buttonNumberFromName.gohome]
-				.setAttribute("tooltiptext", ZoteroItemHistory.collectionName);
 		}
 	}
 };

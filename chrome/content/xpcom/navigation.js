@@ -319,3 +319,27 @@ ZoteroItemHistory.prototype.addToDatabaseTable = function (itemID, CID) {
 		}
 	}
 };
+
+
+ZoteroItemHistory.prototype.toggleCollectionAnchor = function () {
+	var anchor = this.document.getElementById("zotero-item-history-anchor");
+	var ancestor = this.buttons[this.buttonNumberFromName.gohome];
+	if (this.CIDanchored) {
+		ancestor.setAttribute("image", "chrome://zotero-item-history/skin/gohome.png");
+		anchor.firstChild.setAttribute("src", "chrome://zotero-item-history/skin/anchor.png");
+		anchor.lastChild.setAttribute("value", "Anchor to this collection");
+		// Have released anchor, so set this.CID to this.CIDclicked, and reset 
+		// tooltiptext to this.CIDclicked collection name.
+		this.CIDanchored = false;
+		this.CID = this.CIDclicked;
+		this.collectionName = this.collectionNameClicked;
+		this.index = -1;
+		this.initHistoryOk();
+		this.setButtonStates();
+	} else {
+		ancestor.setAttribute("image", "chrome://zotero-item-history/skin/anchor.png");
+		anchor.firstChild.setAttribute("src", "chrome://zotero-item-history/skin/gohome.png");
+		anchor.lastChild.setAttribute("value", "Release collection anchor");
+		this.CIDanchored = true;
+	}
+};

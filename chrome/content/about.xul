@@ -8,7 +8,7 @@
   <groupbox align="center" orient="horizontal">
     <vbox>
       <text value="Zotero Item History" style="font-weight: bold; font-size: x-large;"/>
-      <text value="&version; 0.2"/>
+      <text value="&version; 0.4"/>
       <separator class="thin"/>
       <text value="&createdBy;" style="font-weight: bold;"/>
       <text value="Frank G. Bennett, Jr."/>
@@ -16,7 +16,14 @@
 	  <label value="Overview" style="font-weight: bold;"/>
       <separator class="thin"/>
 	  <description style="width: 600px;">
-Zotero Item History maintains a record of items visited from a given Zotero library or collection, or saved search. The tool is meant to be unintrusive, but helpful in time of need.
+		Zotero Item History maintains a record of items visited from a
+		given Zotero
+		<image src="chrome://zotero-item-history/skin/treesource-library.png"/>&#xa0;(library),
+		<image src="chrome://zotero-item-history/skin/treesource-collection.png"/>&#xa0;(collection)
+		or
+		<image src="chrome://zotero-item-history/skin/treesource-search.png"/>&#xa0;(saved
+		search). The tool is meant to be unintrusive, but helpful in
+		time of need.
 	  </description>
       <separator class="thin"/>
 	  <label value="How it works" style="font-weight: bold;"/>
@@ -24,24 +31,24 @@ Zotero Item History maintains a record of items visited from a given Zotero libr
 	  <hbox>
 		<vbox>
 		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
-			History lists are selected automatically by clicking on a library,
-			collection, or saved search in the left panel.
+			Clicking on a library,
+			collection, or saved search in the left panel selects a history list.
 		  </description>
 		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
-			Items are added to a history list (once only) when they are opened.
+			History can be "anchored" the current collection. See the context
+			menu under <image src="chrome://zotero-item-history/skin/gohome.png"/>
+			for the <image src="chrome://zotero-item-history/skin/anchor.png"/> option.
 		  </description>
 		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
-			Navigation via the Related tab (in the right pane) adds
-			the target item to
-			the <span style="font-style:italic;">current</span>
-			history list, even if the target is not in the current
-			collection or saved search.
+			Jumps via the Related tab (in the right pane) do not affect
+			the history list selection; the item will be added to the current
+			list.
 		  </description>
 		</vbox>
 		<vbox>
 		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
-			Enter an existing list
-			by clicking on the <image src="chrome://zotero-item-history/skin/prev.png"/> icon.
+			To enter an existing list,
+			click on the <image src="chrome://zotero-item-history/skin/prev.png"/> icon.
 		  </description>
 		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
 			Left-clicking the
@@ -57,7 +64,7 @@ Zotero Item History maintains a record of items visited from a given Zotero libr
 			A collection history can be selected or cleared via the
 			context menu on the
 			<image src="chrome://zotero-item-history/skin/gohome.png"/>
-			icon (but if you are reading this, you already know that).
+			icon (but if you are reading this, you already know that&#xa0;&#x2026;&#xa0;).
 		  </description>
 		</vbox>
 	  </hbox>

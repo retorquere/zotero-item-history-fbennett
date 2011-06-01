@@ -102,6 +102,7 @@ ZoteroItemHistory.prototype.windowInit = function (window, document) {
 
 		var contextmenu = document.createElement("menupopup");
 		contextmenu.setAttribute("id", "zotero-item-history-context");
+
 		var deleter = document.createElement("menuitem");
 		deleter.setAttribute("label", "Remove from collection history");
 		deleter.setAttribute("onclick", "ZoteroItemHistory.removeEntry();");
@@ -110,12 +111,23 @@ ZoteroItemHistory.prototype.windowInit = function (window, document) {
 
 		var globalcontextmenu = document.createElement("menupopup");
 		globalcontextmenu.setAttribute("id", "zotero-item-history-global-context");
+
+		var anchor = document.createElement("menuitem");
+		  anchor.setAttribute("id", "zotero-item-history-anchor");
+		  anchor.setAttribute("onclick", "ZoteroItemHistory.toggleCollectionAnchor();");
+		var anchorimage = document.createElement("image");
+		  anchorimage.setAttribute("src", "chrome://zotero-item-history/skin/anchor.png");
+		  anchor.appendChild(anchorimage);
+		var anchorlabel = document.createElement("label");
+		  anchorlabel.setAttribute("value", "Anchor this collection");
+		  anchor.appendChild(anchorlabel);
+		globalcontextmenu.appendChild(anchor);
+
 		var selector = document.createElement("menuitem");
 		selector.setAttribute("label", "Select all items in collection history");
 		selector.setAttribute("onclick", "ZoteroItemHistory.selectAll();");
 		globalcontextmenu.appendChild(selector);
-		var menusep = document.createElement("menuseparator");
-		globalcontextmenu.appendChild(menusep);
+
 		var purger = document.createElement("menuitem");
 		purger.setAttribute("label", "Clear collection history");
 		purger.setAttribute("onclick", "ZoteroItemHistory.clearCollectionHistory();");
@@ -131,6 +143,9 @@ ZoteroItemHistory.prototype.windowInit = function (window, document) {
 		popupset.appendChild(globalcontextmenu);
 
 		var gohome = this.buttons[this.buttonNumberFromName.gohome];
+		// not the best coding here; gohome is never disabled, although
+		// its icon may be switched.
+		this.enableButton("gohome", true);
 		gohome.setAttribute("context", "zotero-item-history-global-context");
 		gohome.setAttribute("popup", "zotero-item-history-menu");
 
@@ -172,54 +187,60 @@ ZoteroItemHistory.prototype.windowInit = function (window, document) {
 		var cTreeItem = cTree._getItemAtRow(cTree.selection.currentIndex);
 
 		// Name blank by default
-		ZoteroItemHistory.collectionName = "";
+		var collectionName = "";
 
 		if (cTreeItem.isLibrary()) {
 			// Use, set name
 			libraryID = null;
 			collectionID = null;
-			ZoteroItemHistory.collectionName = cTreeItem.getName();
+			collectionName = cTreeItem.getName();
 
 		} else if (cTreeItem.isGroup()) {
 			// Use, set name
 			libraryID = Zotero.Groups.getLibraryIDFromGroupID(cTreeItem.ref.id);
 			collectionID = null;
-			ZoteroItemHistory.collectionName = cTreeItem.getName();
+			collectionName = cTreeItem.getName();
 
 		} else if (cTreeItem.isCollection()) {
 			// Use, set name
 			libraryID = cTreeItem.ref.libraryID;
 			collectionID = "C" + cTreeItem.ref.id;
-			ZoteroItemHistory.collectionName = cTreeItem.getName();
+			collectionName = cTreeItem.getName();
 		} else if (cTreeItem.isSearch()) {
 			// Use, set name
 			libraryID = cTreeItem.ref.libraryID;
 			collectionID = "S" + cTreeItem.ref.id;
-			ZoteroItemHistory.collectionName = cTreeItem.getName();
+			collectionName = cTreeItem.getName();
 
 		} else if (cTreeItem.isTrash()) {
 			libraryID = undefined;
 			collectionID = undefined;
-		} else if (cTreeItem.isHeader()) {
-			libraryID = undefined;
-			collectionID = undefined;
-		} else if (cTreeItem.isSeparator()) {
-			libraryID = undefined;
-			collectionID = undefined;
+			collectionName = "";
 		} else if (cTreeItem.isBucket()) {
 			libraryID = undefined;
 			collectionID = undefined;
+			collectionName = "";
 		} else if (cTreeItem.isShare()) {
 			libraryID = undefined;
 			collectionID = undefined;
+			collectionName = "";
 		} else {
 			return;
 		}
 		if ("undefined" === typeof libraryID) {
 			ZoteroItemHistory.disableAllButtons();
+			ZoteroItemHistory.buttons[ZoteroItemHistory.buttonNumberFromName.gohome].setAttribute("tooltiptext", "");
+		}
+		if (libraryID !== ZoteroItemHistory.LID) {
+			ZoteroItemHistory.CIDanchored = false;
 		}
 		ZoteroItemHistory.LID = libraryID;
-		ZoteroItemHistory.CID = collectionID;
+		ZoteroItemHistory.CIDclicked = collectionID;
+		ZoteroItemHistory.collectionNameClicked = collectionName;
+		if (!ZoteroItemHistory.CIDanchored) {
+			ZoteroItemHistory.CID = collectionID;
+			ZoteroItemHistory.collectionName = collectionName;
+		}
 	}
 	this.setCollectionHistoryAddress = setCollectionHistoryAddress;
 

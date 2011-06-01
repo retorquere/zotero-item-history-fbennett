@@ -45,7 +45,9 @@ ZoteroItemHistory = function () {
 	var appInfo =
 		Components.classes["@mozilla.org/xre/app-info;1"].
 		getService(Components.interfaces.nsIXULAppInfo);
-	this.isFx4 = appInfo.platformVersion[0].slice(0, 1) == "2";
+	this.isFx4 = appInfo.platformVersion[0].slice(0, 1) >= 2;
+
+	Zotero.debug("[ZoteroItemHistory] appInfo: " + appInfo.platformVersion[0]);
 
 	Components.utils["import"]("resource://gre/modules/AddonManager.jsm"); 
 
