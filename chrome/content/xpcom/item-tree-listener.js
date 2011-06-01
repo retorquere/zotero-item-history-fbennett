@@ -52,8 +52,8 @@ ZoteroItemHistory.prototype.itemTreeClickListener = function () {
 					}
 					if (ZoteroItemHistory.initHistoryOk()) {
 						ZoteroItemHistory.addToHistory(iTreeItem.ref.id);
-						ZoteroItemHistory.setButtonStates();
 					}
+					ZoteroItemHistory.setButtonStates();
 				}, false);
 			
 			// Block future attempts only if this one succeeded

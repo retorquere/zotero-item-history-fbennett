@@ -13,7 +13,9 @@ ZoteroItemHistory.prototype.relatedListClickListener = function () {
 						var row = Zotero.getAncestorByTagName(event.target, "row");
 						var itemID = row.getAttribute("id");
 						itemID = parseInt(itemID.replace("seealso-", ""), 10);
-						ZoteroItemHistory.addToHistory(itemID);
+						if (ZoteroItemHistory.initHistoryOk()) {
+							ZoteroItemHistory.addToHistory(itemID);
+						}
 						ZoteroItemHistory.showInCollection();
 					}
 				}, false);

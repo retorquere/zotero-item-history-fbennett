@@ -55,26 +55,24 @@ ZoteroItemHistory.prototype.windowInit = function (window, document) {
 	var button;
 	if (!historybuttons || !historybuttons.length) {
 		// No classes found, do this.
-		var newbuttons = [];
+		this.buttons = [];
+		this.menuitems = [];
 		for (i = 0, ilen = 3; i < ilen; i += 1) {
 			button = document.createElement("toolbarbutton");
-			newbuttons.push(button);
+			this.buttons.push(button);
 		}
-
-		this.buttons = newbuttons;
-		
-		for (i = 0, ilen = newbuttons.length; i < ilen; i += 1) {
+		for (i = 0, ilen = this.buttons.length; i < ilen; i += 1) {
 			var buttonName = this.buttonNameFromNumber[i];
-			newbuttons[i].setAttribute("label", "");
-			newbuttons[i].setAttribute("class", "zotero-item-history-button");
+			this.buttons[i].setAttribute("label", "");
+			this.buttons[i].setAttribute("class", "zotero-item-history-button");
 			this.enableButton(buttonName, false);
 		}
 
 		var myhbox = document.createElement("hbox");
 		myhbox.setAttribute("flex", "1");
 
-		for (i = 0, ilen = newbuttons.length; i < ilen; i += 1) {
-			myhbox.appendChild(newbuttons[i]);
+		for (i = 0, ilen = this.buttons.length; i < ilen; i += 1) {
+			myhbox.appendChild(this.buttons[i]);
 		}
 		var mysep = document.createElement("hbox");
 		mysep.setAttribute("flex", "1");
@@ -122,17 +120,20 @@ ZoteroItemHistory.prototype.windowInit = function (window, document) {
 		  anchorlabel.setAttribute("value", "Anchor this collection");
 		  anchor.appendChild(anchorlabel);
 		globalcontextmenu.appendChild(anchor);
+		this.menuitems.push(anchor);
 
 		var selector = document.createElement("menuitem");
 		selector.setAttribute("label", "Select all items in collection history");
 		selector.setAttribute("onclick", "ZoteroItemHistory.selectAll();");
 		globalcontextmenu.appendChild(selector);
+		this.menuitems.push(selector);
 
 		var purger = document.createElement("menuitem");
 		purger.setAttribute("label", "Clear collection history");
 		purger.setAttribute("onclick", "ZoteroItemHistory.clearCollectionHistory();");
 		globalcontextmenu.appendChild(purger);
-		
+		this.menuitems.push(purger);
+
 		var help = document.createElement("menuitem");
 		help.setAttribute("onclick", "window.openDialog('chrome://zotero-item-history/content/about.xul', 'about', '')");
 		help.setAttribute("label", "About Zotero Item History");
@@ -200,7 +201,6 @@ ZoteroItemHistory.prototype.windowInit = function (window, document) {
 			libraryID = Zotero.Groups.getLibraryIDFromGroupID(cTreeItem.ref.id);
 			collectionID = null;
 			collectionName = cTreeItem.getName();
-
 		} else if (cTreeItem.isCollection()) {
 			// Use, set name
 			libraryID = cTreeItem.ref.libraryID;
@@ -226,10 +226,6 @@ ZoteroItemHistory.prototype.windowInit = function (window, document) {
 			collectionName = "";
 		} else {
 			return;
-		}
-		if ("undefined" === typeof libraryID) {
-			ZoteroItemHistory.disableAllButtons();
-			ZoteroItemHistory.buttons[ZoteroItemHistory.buttonNumberFromName.gohome].setAttribute("tooltiptext", "");
 		}
 		if (libraryID !== ZoteroItemHistory.LID) {
 			ZoteroItemHistory.CIDanchored = false;

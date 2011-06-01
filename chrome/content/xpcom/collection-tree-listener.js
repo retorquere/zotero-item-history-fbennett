@@ -17,8 +17,8 @@ ZoteroItemHistory.prototype.collectionTreeClickListener = function () {
 					setCollectionHistoryAddress(true);
 					if (ZoteroItemHistory.initHistoryOk()) {
 						ZoteroItemHistory.index = -1;
-						ZoteroItemHistory.setButtonStates();
 					}
+					ZoteroItemHistory.setButtonStates();
 				}, false);
 			
 			// Block future attempts only if this one succeeded

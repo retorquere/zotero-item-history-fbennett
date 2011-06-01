@@ -221,10 +221,14 @@ ZoteroItemHistory.prototype.clearCollectionHistory = function () {
 ZoteroItemHistory.prototype.initHistoryOk = function (CID) {
 	// Never, ever add anything to the database when LID
 	// or CID are undefined
+	if ("undefined" === typeof this.LID) {
+		return false;
+	}
 	if (!CID) {
 		CID = this.CID;
 	}
-	if ("undefined" === typeof this.LID || "undefined" === typeof CID) {
+	// Probably not necessary
+	if ("undefined" === typeof CID) {
 		return false;
 	}
 	// init

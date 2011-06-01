@@ -79,10 +79,23 @@ ZoteroItemHistory.prototype.disableAllButtons = function () {
 		var buttonName = buttonNames[i];
 		this.enableButton(buttonName, false);
 	}
+	this.buttons[ZoteroItemHistory.buttonNumberFromName.gohome].setAttribute("tooltiptext", "");
 };
 
 
 ZoteroItemHistory.prototype.setButtonStates = function () {
+
+	if ("undefined" === typeof this.LID) {
+		this.disableAllButtons();
+		for (var i = 0, ilen = this.menuitems.length; i < ilen; i += 1) {
+			this.menuitems[i].setAttribute("disabled", "true");
+		}
+		return;
+	} else {
+		for (var i = 0, ilen = this.menuitems.length; i < ilen; i += 1) {
+			this.menuitems[i].setAttribute("disabled", "false");
+		}
+	}
 
 	this.buttons[this.buttonNumberFromName.gohome]
 		.setAttribute("tooltiptext", ZoteroItemHistory.collectionName);
