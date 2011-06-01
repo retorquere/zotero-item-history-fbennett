@@ -8,7 +8,7 @@
   <groupbox align="center" orient="horizontal">
     <vbox>
       <text value="Zotero Item History" style="font-weight: bold; font-size: x-large;"/>
-      <text value="&version; 0.4"/>
+      <text value="&version; 0.5"/>
       <separator class="thin"/>
       <text value="&createdBy;" style="font-weight: bold;"/>
       <text value="Frank G. Bennett, Jr."/>
@@ -35,7 +35,7 @@
 			collection, or saved search in the left panel selects a history list.
 		  </description>
 		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
-			History can be "anchored" the current collection. See the context
+			History can be "anchored" to the current collection. See the context
 			menu under <image src="chrome://zotero-item-history/skin/gohome.png"/>
 			for the <image src="chrome://zotero-item-history/skin/anchor.png"/> option.
 		  </description>
