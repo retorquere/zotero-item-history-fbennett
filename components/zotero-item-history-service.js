@@ -32,6 +32,12 @@ var WrappedZoteroItemHistory = this;
 
 Components.utils["import"]("resource://gre/modules/XPCOMUtils.jsm");
 
+var appInfo = Components.classes["@mozilla.org/xre/app-info;1"]
+                         .getService(Components.interfaces.nsIXULAppInfo);
+if(appInfo.platformVersion[0] >= 2) {
+	Components.utils.import("resource://gre/modules/AddonManager.jsm");
+}
+
 var xpcomFiles = [
 	"history",
 	"utilities",
@@ -59,15 +65,33 @@ for (var i=0, ilen=xpcomFiles.length; i < ilen; i += 1) {
 
 var ZoteroItemHistory = new ZoteroItemHistory();
 
+function setupService(){
+	try {
+		ZoteroItemHistory.init();
+	} catch (e) {
+		var msg = typeof e == 'string' ? e : e.name;
+		dump(e + "\n\n");
+		Components.utils.reportError(e);
+		Zotero.debug("[ZoteroItemHistory] " + e);
+		throw (e);
+	}
+}
+
 function ZoteroItemHistoryService() { 
 	this.wrappedJSObject = WrappedZoteroItemHistory.ZoteroItemHistory;
+	setupService();
 }
 
 ZoteroItemHistoryService.prototype = {
   classDescription: 'Zotero Item History Extension',
   classID:          Components.ID("{487b2ad0-8426-11e0-9d78-0800200c9a66}"),
   contractID:       '@mysterylab/ZoteroItemHistoryService;1',
+  service: true,
   QueryInterface: XPCOMUtils.generateQI([Components.interfaces.nsISupports])
 };
 
-var NSGetFactory = XPCOMUtils.generateNSGetFactory([ZoteroItemHistoryService]);
+if (XPCOMUtils.generateNSGetFactory) {
+	var NSGetFactory = XPCOMUtils.generateNSGetFactory([ZoteroItemHistoryService]);
+} else {
+	var NSGetModule = XPCOMUtils.generateNSGetModule([ZoteroItemHistoryService]);
+}

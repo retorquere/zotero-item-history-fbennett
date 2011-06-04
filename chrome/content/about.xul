@@ -8,7 +8,7 @@
   <groupbox align="center" orient="horizontal">
     <vbox>
       <text value="Zotero Item History" style="font-weight: bold; font-size: x-large;"/>
-      <text value="&version; 0.5"/>
+      <text value="&version; 0.7"/>
       <separator class="thin"/>
       <text value="&createdBy;" style="font-weight: bold;"/>
       <text value="Frank G. Bennett, Jr."/>
@@ -16,14 +16,13 @@
 	  <label value="Overview" style="font-weight: bold;"/>
       <separator class="thin"/>
 	  <description style="width: 600px;">
-		Zotero Item History maintains a record of items visited from a
-		given Zotero
+		Zotero Item History maintains a record of Zotero items visited from a
+		given
 		<image src="chrome://zotero-item-history/skin/treesource-library.png"/>&#xa0;(library),
 		<image src="chrome://zotero-item-history/skin/treesource-collection.png"/>&#xa0;(collection)
 		or
 		<image src="chrome://zotero-item-history/skin/treesource-search.png"/>&#xa0;(saved
-		search). The tool is meant to be unintrusive, but helpful in
-		time of need.
+		search).
 	  </description>
       <separator class="thin"/>
 	  <label value="How it works" style="font-weight: bold;"/>
@@ -40,15 +39,15 @@
 			for the <image src="chrome://zotero-item-history/skin/anchor.png"/> option.
 		  </description>
 		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
-			Jumps via the Related tab (in the right pane) do not affect
+			Selecting an item via the Related tab does not change
 			the history list selection; the item will be added to the current
 			list.
 		  </description>
 		</vbox>
 		<vbox>
 		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
-			To enter an existing list,
-			click on the <image src="chrome://zotero-item-history/skin/prev.png"/> icon.
+			To open a selected list before clicking on any of its members,
+			use the <image src="chrome://zotero-item-history/skin/prev.png"/> icon.
 		  </description>
 		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
 			Left-clicking the

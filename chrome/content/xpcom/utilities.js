@@ -79,7 +79,6 @@ ZoteroItemHistory.prototype.disableAllButtons = function () {
 		var buttonName = buttonNames[i];
 		this.enableButton(buttonName, false);
 	}
-	this.buttons[ZoteroItemHistory.buttonNumberFromName.gohome].setAttribute("tooltiptext", "");
 };
 
 

@@ -25,7 +25,10 @@
 
 /*global ZoteroItemHistory: true, Components: true, AddonManager: true */
 
-ZoteroItemHistory = function () {
+ZoteroItemHistory = function () {};
+
+ZoteroItemHistory.prototype.init = function () {
+
 	this.windowsSeen = {};
 	this.windowsSeen.cTree = {};
 	this.windowsSeen.iTree = {};
@@ -35,6 +38,8 @@ ZoteroItemHistory = function () {
 
 	this.Zotero = Components.classes['@zotero.org/Zotero;1'].getService().wrappedJSObject;
 	var Zotero = this.Zotero;
+
+	Zotero.debug("[ZoteroItemHistory] init()");
 
 	this.db = new this.Zotero.DBConnection("zotero-item-history");
 
