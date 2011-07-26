@@ -8,10 +8,24 @@
   <groupbox align="center" orient="horizontal">
     <vbox>
       <text value="Zotero Item History" style="font-weight: bold; font-size: x-large;"/>
-      <text value="&version; 0.7"/>
+      <text value="&version; 0.8"/>
       <separator class="thin"/>
-      <text value="&createdBy;" style="font-weight: bold;"/>
-      <text value="Frank G. Bennett, Jr."/>
+      <hbox>
+        <vbox>
+          <label value="&createdBy;" style="font-weight: bold;"/>
+          <label value="Frank G. Bennett, Jr."/>
+        </vbox>
+        <separator class="groove" orient="vertical"/>
+        <vbox>
+           <label value="&iconsBy;" style="font-weight: bold;"/>
+           <hbox>
+             <label value="Mark James"/>
+             <label class="text-link" href="http://www.famfamfam.com/lab/icons/silk/" value="(FamFamFam Silk)"/>
+           </hbox>
+        </vbox>
+        <separator class="groove" orient="vertical"/>
+		<vbox flex="1"/>
+      </hbox>
       <separator class="groove"/>
 	  <label value="Overview" style="font-weight: bold;"/>
       <separator class="thin"/>

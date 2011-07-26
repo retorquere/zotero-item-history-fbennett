@@ -1,4 +1,5 @@
 <!ENTITY about "About">
 <!ENTITY version "Version:">
-<!ENTITY createdBy "Created By:">
+<!ENTITY createdBy "Plugin author:">
+<!ENTITY iconsBy "Icon design:">
 <!ENTITY homepage "Home Page:">
