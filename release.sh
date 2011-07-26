@@ -111,7 +111,7 @@ askifok
 ### Write formatted comments into updateInfo file
 OLDIFS=$IFS
 IFS=" "
-echo OK11
+echo OK11: %%$COMMENTS%%
 sed -si "/##CHANGES##/{i $COMMENTS
 
 ;d;}" updateInfo.xhtml
