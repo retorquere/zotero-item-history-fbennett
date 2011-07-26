@@ -109,7 +109,7 @@ if [ "${ALL_CHECKED_IN}" == "1" ]; then
   REVISION=$(hg log -rtip | grep changeset: | sed -e "s/changeset:[[:space:]]*\([0-9]*\).*/\1/")
 
   ## Show the changes
-  showlines "echo ${RAWCOMMENTS}"
+  showlines "echo ${COMMENTS}"
 else
   REVISION="local"
 fi
