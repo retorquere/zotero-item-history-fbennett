@@ -94,9 +94,7 @@ if [ "${ALL_CHECKED_IN}" == "1" ]; then
   fi
   OLDIFS=$IFS
   IFS=" "
-echo OK1
   COMMENTS=$(echo ${RAWCOMMENTS} | hg log -r10:tip | sed -e "s~changeset:[[:space:]]*\([0-9]*\).*~\\</li\\>\\<li\\>\\<b\\>Revision \1: \\</b\\>~;s~[a-z]\+:.*~~;1,1s~^.....~~;\$,\$s~\(.*\)~\1\\</li\\>~")
-echo OK2
   IFS=$OLDIFS
 
   ### Get the current revision number
@@ -113,9 +111,11 @@ askifok
 ### Write formatted comments into updateInfo file
 OLDIFS=$IFS
 IFS=" "
+echo OK11
 sed -si "/##CHANGES##/{i $COMMENTS
 
 ;d;}" updateInfo.xhtml
+echo OK22
 IFS=$OLDIFS
 
 ### Write release number into install, update, and updateInfo
