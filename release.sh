@@ -100,6 +100,7 @@ if [ "${ALL_CHECKED_IN}" == "1" ]; then
   STRIPPED_COMMENTS=""
   for i in $COMMENTS; do
 	LINE=$(echo -n $i)
+	echo -n $i
     STRIPPED_COMMENTS="${STRIPPED_COMMENTS} ${LINE}"
   done
   COMMENTS=$STRIPPED_COMMENTS
