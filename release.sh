@@ -96,13 +96,8 @@ if [ "${ALL_CHECKED_IN}" == "1" ]; then
   IFS=" "
   COMMENTS=$(echo ${RAWCOMMENTS} | hg log -r10:tip | sed -e "s~changeset:[[:space:]]*\([0-9]*\).*~\\\</li\\\>\\\<li\\\>\\\<b\\\>Revision \1: \\\</b\\\>~;s~[a-z]\+:.*~~;1,1s~^.......~~;\$,\$s~\(.*\)~\1\\\</li\\\>~")
   IFS=$OLDIFS
-  IFS="\n"
-  STRIPPED_COMMENTS=""
-  for i in $COMMENTS; do
-	LINE=$(echo -n $i)
-	echo -n $i
-    STRIPPED_COMMENTS="${STRIPPED_COMMENTS} ${LINE}"
-  done
+  ## Solution from http://stackoverflow.com/questions/1251999/sed-how-can-i-replace-a-newline-n
+  STRIPPED_COMMENTS=$(echo $COMMENTS|sed ':a;N;$!ba;s/\n/ /g')
   COMMENTS=$STRIPPED_COMMENTS
 
   ### Get the current revision number
