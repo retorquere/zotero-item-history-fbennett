@@ -94,7 +94,7 @@ if [ "${ALL_CHECKED_IN}" == "1" ]; then
   fi
   OLDIFS=$IFS
   IFS=" "
-  COMMENTS=$(echo ${RAWCOMMENTS} | hg log -r10:tip | sed -e "s~changeset:[[:space:]]*\([0-9]*\).*~\\</li\\>\\<li\\>\\<b\\>Revision \1: \\</b\\>~;s~[a-z]\+:.*~~;1,1s~^.....~~;\$,\$s~\(.*\)~\1\\</li\\>~")
+  COMMENTS=$(echo ${RAWCOMMENTS} | hg log -r10:tip | sed -e "s~changeset:[[:space:]]*\([0-9]*\).*~\\\</li\\\>\\\<li\\\>\\\<b\\\>Revision \1: \\\</b\\\>~;s~[a-z]\+:.*~~;1,1s~^.....~~;\$,\$s~\(.*\)~\1\\\</li\\\>~")
   IFS=$OLDIFS
 
   ### Get the current revision number
