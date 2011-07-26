@@ -1,8 +1,3 @@
-<!ENTITY csl-feedback-zotero.label "Your localized menuitem">
-<!ENTITY csl-feedback-zoteroContext.label "Your Menuitem">
-<!ENTITY csl-feedback-zoteroContext.accesskey "Y">
-<!ENTITY csl-feedback-zoteroToolbarButton.label "Your Toolbar Button">
-<!ENTITY csl-feedback-zoteroToolbarButton.tooltip "This is your toolbar button!">
-<!ENTITY csl-feedback-zoteroSidebar.label "Your Sidebar">
-<!ENTITY csl-feedback-zoteroToolbar.name  "example">
-<!ENTITY csl-feedback-zoteroToolbar.label "This is an example toolbar. You can hide it under View &gt; toolbars &gt; &csl-feedback-zoteroToolbar.name;">
+<!ENTITY  zotero-item-history.gohomeNotYetSet "(not yet set)">
+<!ENTITY  zotero-item-history.prev "Previous history item">
+<!ENTITY  zotero-item-history.next "Next history item">

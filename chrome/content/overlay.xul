@@ -5,8 +5,37 @@
 
   <script src="main.js"/>
 
-  <stringbundleset id="stringbundleset">
-    <stringbundle id="zotero-item-history-strings" src="chrome://zotero-item-history/locale/overlay.properties"/>
-  </stringbundleset>
+  <stack id="zotero-pane-stack">
+    <tooltip id="zotero-item-history-tooltip-gohome" orient="vertical">
+      <grid>
+        <columns>
+          <column/>
+          <column flex="1"/>
+        </columns>
+        <rows>
+          <row>
+            <label value="Home: " style="font-weight:bold;"/>
+            <label id="zotero-item-history-tooltiptext-gohome"  value="&zotero-item-history.gohomeNotYetSet;"/>
+          </row>
+          <row>
+            <label value="Left-click: " style="font-weight:bold;"/>
+            <label value="history list"/>
+          </row>
+          <row>
+            <label value="Right-click: " style="font-weight:bold;"/>
+            <label value="options and info"/>
+          </row>
+        </rows>
+      </grid>
+    </tooltip>
+
+    <tooltip id="zotero-item-history-tooltip-prev" orient="vertical">
+      <label value="&zotero-item-history.prev;"/>
+    </tooltip>
+
+    <tooltip id="zotero-item-history-tooltip-next" orient="vertical">
+	  <label value="&zotero-item-history.next;"/>
+    </tooltip>
+  </stack>
 
 </overlay>

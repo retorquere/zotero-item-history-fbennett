@@ -55,6 +55,18 @@ ZoteroItemHistory.prototype.windowInit = function (window, document) {
 	var button;
 	if (!historybuttons || !historybuttons.length) {
 		// No classes found, do this.
+
+		// get localized string bundle
+        var stringBundleService =
+            Components.classes["@mozilla.org/intl/stringbundle;1"]
+            .getService(Components.interfaces.nsIStringBundleService);
+        var localeService = Components.classes['@mozilla.org/intl/nslocaleservice;1'].
+            getService(Components.interfaces.nsILocaleService);
+		var localeAsString = this.Zotero.locale;
+        var appLocale = localeService.newLocale(localeAsString);
+        this._localizedStringBundle = stringBundleService.createBundle(
+            "chrome://zotero-item-history/locale/overlay.properties", appLocale);
+
 		this.buttons = [];
 		this.menuitems = [];
 		for (i = 0, ilen = 3; i < ilen; i += 1) {
@@ -65,6 +77,8 @@ ZoteroItemHistory.prototype.windowInit = function (window, document) {
 			var buttonName = this.buttonNameFromNumber[i];
 			this.buttons[i].setAttribute("label", "");
 			this.buttons[i].setAttribute("class", "zotero-item-history-button");
+			this.buttons[i].setAttribute("tooltip", "zotero-item-history-tooltip-" + buttonName);
+			this.Zotero.debug("XXX Set frigging tooltip to: " + "zotero-item-history-tooltip-" + buttonName);
 			this.enableButton(buttonName, false);
 		}
 

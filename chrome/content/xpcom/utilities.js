@@ -41,6 +41,15 @@ ZoteroItemHistory.prototype.buttonNameFromNumber = {
 };
 
 
+ZoteroItemHistory.prototype.setButtonTooltip = function (button, name) {
+			var stringName = "extensions.zotero-item-history." + this.buttonNameFromNumber[i];
+	if (name === "gohome") {
+		
+	} else {
+		
+	}
+};
+
 ZoteroItemHistory.prototype.enableButton = function (name, enable) {
 	if ("boolean" !== typeof enable) {
 		throw "Second argument to enableButton() must be boolean true or false.";
@@ -96,8 +105,8 @@ ZoteroItemHistory.prototype.setButtonStates = function () {
 		}
 	}
 
-	this.buttons[this.buttonNumberFromName.gohome]
-		.setAttribute("tooltiptext", ZoteroItemHistory.collectionName);
+	var collectionLabel = this.document.getElementById("zotero-item-history-tooltiptext-gohome");
+	collectionLabel.setAttribute("value", ZoteroItemHistory.collectionName);
 	
 	var historyLength;
 	if ("undefined" !== typeof this.CID) {
