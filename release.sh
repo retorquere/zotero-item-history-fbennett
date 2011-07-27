@@ -157,6 +157,6 @@ cp updateInfo.xhtml zotero-item-history.xhtml
 scp zotero-item-history.rdf zotero-item-history.xhtml zotero-item-history.xpi gsl-nagoya-u.net:/http/pub
 
 ### If that all come off okay, update the svn
-hg update
+#hg update
 
 echo Done

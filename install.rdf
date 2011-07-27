@@ -1,31 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
-  <Description about="urn:mozilla:install-manifest">
-    <em:id>zotero-item-history@mystery-lab.com</em:id>
-    <em:type>2</em:type>
-    <em:name>Zotero Item History</em:name>
-    <em:version>1.0r33</em:version>
-    <em:creator>Frank Bennett</em:creator>
-    <em:contributor></em:contributor>
-    <em:description>Extends the Zotero reference manager with per-collection browsing history.</em:description>
-    <em:aboutURL>chrome://zotero-item-history/content/about.xul</em:aboutURL>
-    <em:optionsURL>chrome://zotero-item-history/content/options.xul</em:optionsURL>
-   <em:updateURL>http://gsl-nagoya-u.net/http/pub/zotero-item-history.rdf</em:updateURL>
-    <em:unpack>true</em:unpack>
-    <em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJqWvOZqiHGp8hLJI92KIp6t1pKP2Q2t+5glUh7JSl+2pdt8y9ANHT1Bx3YrKDi1xwXJ7FNi4mss5XFqEmuJf2TDn02+V6D0hFsNEsSlkCcsznwnCYzeU8GKAhlgjeXz7YPQswLLSk61af/hIhdYUEyYQbxmIAOHDHgMeRcuYJ+QIDAQAB</em:updateKey>
-    <em:targetApplication>
-	  <Description>
-        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
-        <em:minVersion>3.6</em:minVersion>
-        <em:maxVersion>5.*</em:maxVersion>
-	  </Description>
-    </em:targetApplication>
-    <em:targetApplication>
-	  <Description>
-        <em:id>zotero@chnm.gmu.edu</em:id> <!-- Zotero -->
-        <em:minVersion>2.1</em:minVersion>
-        <em:maxVersion>2.1.*</em:maxVersion>
-	  </Description>
-    </em:targetApplication>
-  </Description>
-</RDF>
+<?xml version="1.0"?>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="rdf:#$CdoGd3"
+                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   em:minVersion="3.6"
+                   em:maxVersion="5.*" />
+  <RDF:Description RDF:about="rdf:#$HdoGd3"
+                   em:id="zotero@chnm.gmu.edu"
+                   em:minVersion="2.1"
+                   em:maxVersion="2.1.*" />
+  <RDF:Description RDF:about="urn:mozilla:install-manifest"
+                   em:id="zotero-item-history@mystery-lab.com"
+                   em:type="2"
+                   em:name="Zotero Item History"
+                   em:version="1.0r##REVISION##"
+                   em:creator="Frank Bennett"
+                   em:description="Extends the Zotero reference manager with per-collection browsing history."
+                   em:aboutURL="chrome://zotero-item-history/content/about.xul"
+                   em:optionsURL="chrome://zotero-item-history/content/options.xul"
+                   em:updateURL="http://gsl-nagoya-u.net/http/pub/zotero-item-history.rdf"
+                   em:unpack="true"
+                   em:updateKey="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJqWvOZqiHGp8hLJI92KIp6t1pKP2Q2t+5glUh7JSl+2pdt8y9ANHT1Bx3YrKDi1xwXJ7FNi4mss5XFqEmuJf2TDn02+V6D0hFsNEsSlkCcsznwnCYzeU8GKAhlgjeXz7YPQswLLSk61af/hIhdYUEyYQbxmIAOHDHgMeRcuYJ+QIDAQAB">
+    <em:targetApplication RDF:resource="rdf:#$CdoGd3"/>
+    <em:targetApplication RDF:resource="rdf:#$HdoGd3"/>
+  </RDF:Description>
+</RDF:RDF>
