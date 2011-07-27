@@ -2,22 +2,22 @@
 <RDF:RDF xmlns:NS1="http://www.mozilla.org/2004/em-rdf#"
          xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <RDF:Description RDF:about="rdf:#$Z4O9h"
-                   NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+  <RDF:Description RDF:about="rdf:#$5KVpT3"
+                   NS1:id="zotero-item-history@mystery-lab.com"
                    NS1:minVersion="3.6"
                    NS1:maxVersion="6.0.*"
                    NS1:updateLink="http://gsl-nagoya-u.net/http/pub/zotero-item-history.xpi"
                    NS1:updateInfoURL="http://gsl-nagoya-u.net/http/pub/zotero-item-history.xhtml"
-                   NS1:updateHash="sha1:c848306c84603cfa1019ecc9317a141333f4a309" />
-  <RDF:Seq RDF:about="rdf:#$V4O9h">
-    <RDF:li RDF:resource="rdf:#$W4O9h"/>
+                   NS1:updateHash="sha1:3d09083d54e6705e04001a7d333a2ee66c74fed9" />
+  <RDF:Seq RDF:about="rdf:#$1KVpT3">
+    <RDF:li RDF:resource="rdf:#$2KVpT3"/>
   </RDF:Seq>
-  <RDF:Description RDF:about="rdf:#$W4O9h"
-                   NS1:version="1.0r34">
-    <NS1:targetApplication RDF:resource="rdf:#$Z4O9h"/>
+  <RDF:Description RDF:about="urn:mozilla:extension:zotero-item-history@mystery-lab.com"
+                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAAmjiVYEuMevTRoJoHT7HqP4VHLuhS5V77v19fetb66YgAzRyWgUdmD1E0H+zXT3EPPLq4nSmVtjHRO/8tNdLY9OCqko2NrXvCk8UvKTdnxc51FAstAI2sgJtf8YOZ6QQPfn+rRk15Rq+eM0FlW8xidCiVZA4odbCUv7DEvR8xqr">
+    <NS1:updates RDF:resource="rdf:#$1KVpT3"/>
   </RDF:Description>
-  <RDF:Description RDF:about="urn:mozilla:extension:zotero-item-histor@mystery-lab.com"
-                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAJ0zDLoDqS45miRvltbgtsHXgnxy7zxqTTZq6rHitAhm5N3dxxLPib12/YIGSltY01Fm+4A9wb/AC2nBBI/i+NFmT8LRoDH5duOetNo19XCTEErZuJQ1oGZYNQbHPYkvXGFzEfrhU+oXfYc2L92ntgeZmUK/8+g005XFHOuEKuTx">
-    <NS1:updates RDF:resource="rdf:#$V4O9h"/>
+  <RDF:Description RDF:about="rdf:#$2KVpT3"
+                   NS1:version="1.0r36">
+    <NS1:targetApplication RDF:resource="rdf:#$5KVpT3"/>
   </RDF:Description>
 </RDF:RDF>
