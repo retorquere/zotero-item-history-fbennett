@@ -2,22 +2,22 @@
 <RDF:RDF xmlns:NS1="http://www.mozilla.org/2004/em-rdf#"
          xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <RDF:Description RDF:about="urn:mozilla:extension:zotero-item-history@mystery-lab.com"
-                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAJ4R9G03MAQfnvrAbVl5UoT/w48NoEFENG91d3cZ8Gx3WmTQ9piiQvOiNiivc1MJTQooXiCMk+iHENof3kXe2RZSHfSPvywMR0gn2cCXrMHym0MQjJYVKCq8vxFuua6D6r++FkNjSb1s2RLML1Q1d1NKyZyGZkuTo59xVxUlZJ2n">
-    <NS1:updates RDF:resource="rdf:#$p24L21"/>
+  <RDF:Description RDF:about="rdf:#$tvNAM3"
+                   NS1:version="1.0.45">
+    <NS1:targetApplication RDF:resource="rdf:#$wvNAM3"/>
   </RDF:Description>
-  <RDF:Seq RDF:about="rdf:#$p24L21">
-    <RDF:li RDF:resource="rdf:#$q24L21"/>
+  <RDF:Seq RDF:about="rdf:#$svNAM3">
+    <RDF:li RDF:resource="rdf:#$tvNAM3"/>
   </RDF:Seq>
-  <RDF:Description RDF:about="rdf:#$t24L21"
-                   NS1:id="zotero-item-history@mystery-lab.com"
-                   NS1:minVersion="1.0"
-                   NS1:maxVersion="1.0.*"
+  <RDF:Description RDF:about="urn:mozilla:extension:zotero-item-history@mystery-lab.com"
+                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAApWol29mH+pIZu/2iObUe4oY5HAkPbWv+aURuf8V3WKpN0yHVKuoDwFxz8Z1rx7mOvo+J+W7mh/V1YWD8aTKgfmfmcYbtnHt3Me2aevc3ing3Woc32kbed3ircyQdA7rg3/OI04glhoyhxs/dTbUcdHISgmC9AsYwSE/njopN+a">
+    <NS1:updates RDF:resource="rdf:#$svNAM3"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$wvNAM3"
+                   NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   NS1:minVersion="3.6"
+                   NS1:maxVersion="6.0.*"
                    NS1:updateLink="http://gsl-nagoya-u.net/http/pub/zotero-item-history.xpi"
                    NS1:updateInfoURL="http://gsl-nagoya-u.net/http/pub/zotero-item-history.xhtml"
-                   NS1:updateHash="sha1:1fbbce6dd9a6f482b9a5ce9841a24d75808d64d2" />
-  <RDF:Description RDF:about="rdf:#$q24L21"
-                   NS1:version="1.0.44">
-    <NS1:targetApplication RDF:resource="rdf:#$t24L21"/>
-  </RDF:Description>
+                   NS1:updateHash="sha1:7179b74f1e9b7be6fe3a69d4c1ac1dedae040df9" />
 </RDF:RDF>
