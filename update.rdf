@@ -2,22 +2,22 @@
 <RDF:RDF xmlns:NS1="http://www.mozilla.org/2004/em-rdf#"
          xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <RDF:Seq RDF:about="rdf:#$aZltV">
-    <RDF:li RDF:resource="rdf:#$bZltV"/>
-  </RDF:Seq>
-  <RDF:Description RDF:about="urn:mozilla:extension:zotero-item-history@mystery-lab.com"
-                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBACMo8Ux3DRru+WOqKHUMGKjhyclCKbWHZIOH8gEuz6HzzuhdxJB7x/E93+AMAjojl+wbfoEB7WMMbOdkoZYJ0V2MgEDEc3kIPRE7D0yhk5RTli2+Ne3kvyAod03r3sTyc9zwmkeetHUpbqQagO9e9aQo8ZSYJpoWofCqIw1H7aej">
-    <NS1:updates RDF:resource="rdf:#$aZltV"/>
+  <RDF:Description RDF:about="rdf:#$6talZ"
+                   NS1:version="1.0.43">
+    <NS1:targetApplication RDF:resource="rdf:#$9talZ"/>
   </RDF:Description>
-  <RDF:Description RDF:about="rdf:#$eZltV"
+  <RDF:Seq RDF:about="rdf:#$5talZ">
+    <RDF:li RDF:resource="rdf:#$6talZ"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="rdf:#$9talZ"
                    NS1:id="zotero-item-history@mystery-lab.com"
                    NS1:minVersion="1.0"
                    NS1:maxVersion="1.0.*"
                    NS1:updateLink="http://gsl-nagoya-u.net/http/pub/zotero-item-history.xpi"
                    NS1:updateInfoURL="http://gsl-nagoya-u.net/http/pub/zotero-item-history.xhtml"
-                   NS1:updateHash="sha1:eef7b87e7072fac67579b4b922fc97cb56e0a93f" />
-  <RDF:Description RDF:about="rdf:#$bZltV"
-                   NS1:version="1.0.42">
-    <NS1:targetApplication RDF:resource="rdf:#$eZltV"/>
+                   NS1:updateHash="sha1:ad09ef6410e718e9fe636e72f3eba5261f0d3028" />
+  <RDF:Description RDF:about="urn:mozilla:extension:zotero-item-history@mystery-lab.com"
+                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAGMPSEuoRqN8f1kxJf7G+WaEe8hiu5A6HyBmcbXr27czihrHkHqcHzSSZ1Pxa7E0JHuKyiumNP1CaO7+KNv+RH8xofhHiiT3GIfGZBDO30YpMHW16gfn3GqOk2E6p22RKSt4zlpgYhLYImt4LCccDxeat/y4OOPrkFNMtwMXHcR5">
+    <NS1:updates RDF:resource="rdf:#$5talZ"/>
   </RDF:Description>
 </RDF:RDF>
