@@ -2,22 +2,22 @@
 <RDF:RDF xmlns:NS1="http://www.mozilla.org/2004/em-rdf#"
          xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <RDF:Description RDF:about="urn:mozilla:extension:zotero-item-history@mystery-lab.com"
-                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAE+q1Cz/ofqixVpaMRrwF6qvm4CWn+GzxrEL65TGw202dI0Ddi38wEGflHPxoTdjwz02+d6LZ+4ADdBfKphp7gJ/0IgxYiX/nSfJoJPwtxq13jSLm7olSz7vUkfQ5Tw25AnFUc/3l/QW0A91pbZB/KRIPaDyZjj/ztFh3B0wfgDC">
-    <NS1:updates RDF:resource="rdf:#$vwndp"/>
+  <RDF:Description RDF:about="rdf:#$hOOqD"
+                   NS1:version="1.0.40">
+    <NS1:targetApplication RDF:resource="rdf:#$kOOqD"/>
   </RDF:Description>
-  <RDF:Seq RDF:about="rdf:#$vwndp">
-    <RDF:li RDF:resource="rdf:#$wwndp"/>
-  </RDF:Seq>
-  <RDF:Description RDF:about="rdf:#$wwndp"
-                   NS1:version="1.0r39">
-    <NS1:targetApplication RDF:resource="rdf:#$zwndp"/>
-  </RDF:Description>
-  <RDF:Description RDF:about="rdf:#$zwndp"
+  <RDF:Description RDF:about="rdf:#$kOOqD"
                    NS1:id="zotero-item-history@mystery-lab.com"
                    NS1:minVersion="1.0"
-                   NS1:maxVersion="1.0r*"
+                   NS1:maxVersion="1.0.*"
                    NS1:updateLink="http://gsl-nagoya-u.net/http/pub/zotero-item-history.xpi"
                    NS1:updateInfoURL="http://gsl-nagoya-u.net/http/pub/zotero-item-history.xhtml"
-                   NS1:updateHash="sha1:d843186a569be7ffdb3e41944b7878d2cef8eebb" />
+                   NS1:updateHash="sha1:59284288f318ed27253f1ab33f8eeb659c774362" />
+  <RDF:Seq RDF:about="rdf:#$gOOqD">
+    <RDF:li RDF:resource="rdf:#$hOOqD"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="urn:mozilla:extension:zotero-item-history@mystery-lab.com"
+                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAL2sj1iKShLADydjoj7jwsrOR+ai2SlW+6foKFp1zNUFWvDJ1y/p/Hymzvu+sOaf048+RLn41BJoijiqqOR95NbMTcKFjAdldtN9iZ+C0qN1aktypGnv4CoIDsg9IlJOcXZNX20AiXokyJesfeolRBQ6eNLE3zorCwCunAg/HnsW">
+    <NS1:updates RDF:resource="rdf:#$gOOqD"/>
+  </RDF:Description>
 </RDF:RDF>
