@@ -1,3 +1,9 @@
 
 ^zotero-item-history.xpi
+^zotero-item-history.rdf
+^zotero-item-history.xhtml
 ^icons
+^.*~
+^about.xul
+^install.bak
+^update.bak

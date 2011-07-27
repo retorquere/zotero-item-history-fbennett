@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE dialog SYSTEM "chrome://zotero-item-history/locale/about.dtd">
+
+<dialog title="&about; Zotero Item History" orient="vertical" autostretch="always" onload="sizeToContent()" buttons="accept" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <groupbox align="center" orient="horizontal">
+    <vbox>
+      <text value="Zotero Item History" style="font-weight: bold; font-size: x-large;"/>
+      <text value="&version; 1.0r##REVISION##"/>
+      <separator class="thin"/>
+      <hbox>
+        <vbox>
+          <label value="&createdBy;" style="font-weight: bold;"/>
+          <label value="Frank G. Bennett, Jr."/>
+        </vbox>
+        <separator class="groove" orient="vertical"/>
+        <vbox>
+           <label value="&iconsBy;" style="font-weight: bold;"/>
+           <hbox>
+             <label value="Mark James"/>
+             <label class="text-link" href="http://www.famfamfam.com/lab/icons/silk/" value="(FamFamFam Silk)"/>
+           </hbox>
+        </vbox>
+        <separator class="groove" orient="vertical"/>
+		<vbox flex="1"/>
+      </hbox>
+      <separator class="groove"/>
+	  <label value="Overview" style="font-weight: bold;"/>
+      <separator class="thin"/>
+	  <description style="width: 600px;">
+		Zotero Item History maintains a record of Zotero items visited from a
+		given
+		<image src="chrome://zotero-item-history/skin/treesource-library.png"/>&#xa0;(library),
+		<image src="chrome://zotero-item-history/skin/treesource-collection.png"/>&#xa0;(collection)
+		or
+		<image src="chrome://zotero-item-history/skin/treesource-search.png"/>&#xa0;(saved
+		search).
+	  </description>
+      <separator class="thin"/>
+	  <label value="How it works" style="font-weight: bold;"/>
+      <separator class="thin"/>
+	  <hbox>
+		<vbox>
+		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
+			Clicking on a library,
+			collection, or saved search in the left panel selects a history list.
+		  </description>
+		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
+			History can be "anchored" to the current collection. See the context
+			menu under <image src="chrome://zotero-item-history/skin/gohome.png"/>
+			for the <image src="chrome://zotero-item-history/skin/anchor.png"/> option.
+		  </description>
+		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
+			Selecting an item via the Related tab does not change
+			the history list selection; the item will be added to the current
+			list.
+		  </description>
+		</vbox>
+		<vbox>
+		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
+			To open a selected list before clicking on any of its members,
+			use the <image src="chrome://zotero-item-history/skin/prev.png"/> icon.
+		  </description>
+		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
+			Left-clicking the
+			<image src="chrome://zotero-item-history/skin/gohome.png"/>
+			icon opens a scrollable list of items in the history
+			list. The
+			<image src="chrome://zotero-item-history/skin/next.png"/>
+			and
+			<image src="chrome://zotero-item-history/skin/prev.png"/>
+			icons provide sequential forward and back navigation.
+		  </description>
+		  <description style="width: 270px;list-style-type:disc;display:list-item;margin-left:2em;">
+			A collection history can be selected or cleared via the
+			context menu on the
+			<image src="chrome://zotero-item-history/skin/gohome.png"/>
+			icon (but if you are reading this, you already know that&#xa0;&#x2026;&#xa0;).
+		  </description>
+		</vbox>
+	  </hbox>
+    </vbox>
+  </groupbox>
+</dialog>

@@ -2,7 +2,7 @@
 
 set -e
 
-# Go through the release steps for zotero-multi-2
+# Go through the release steps for zotero-item-history
 
 ### Define a cleanup function and lay a trap
 function cleanup () {
@@ -14,6 +14,8 @@ function cleanup () {
   hg revert install.rdf
   cp update.rdf update.bak
   hg revert update.rdf
+
+  hg revert chrome/content/about.xul
   exit 0
 }
 trap cleanup SIGINT
@@ -82,6 +84,7 @@ fi
 cp install.tmpl install.rdf
 cp update.tmpl update.rdf
 cp updateInfo.tmpl updateInfo.xhtml
+cp about.tmpl about.xul
 
 ### Edit the description
 
@@ -104,7 +107,7 @@ if [ "${ALL_CHECKED_IN}" == "1" ]; then
   REVISION=$(hg log -rtip | grep changeset: | sed -e "s/changeset:[[:space:]]*\([0-9]*\).*/\1/")
 
   ## Show the changes
-  #showlines "echo ${COMMENTS}"
+  showlines "echo ${COMMENTS}"
 else
   REVISION="local"
 fi
@@ -114,22 +117,20 @@ askifok
 ### Write formatted comments into updateInfo file
 OLDIFS=$IFS
 IFS=" "
-echo OK11: %%$COMMENTS%%
-
-
 sed -si "/##CHANGES##/{i $COMMENTS
 
 ;d;}" updateInfo.xhtml
-echo OK22
 IFS=$OLDIFS
 
 ### Write release number into install, update, and updateInfo
 sed -si "s/##REVISION##/$REVISION/g" install.rdf
 sed -si "s/##REVISION##/$REVISION/g" update.rdf
 sed -si "s/##REVISION##/$REVISION/g" updateInfo.xhtml
+sed -si "s/##REVISION##/$REVISION/g" about.xul
+cp about.xul chrome/content/about.xul
 
 ### Build the xpi
-echo -n "Building zotero-multi-2.xpi ... "
+echo -n "Building zotero-item-history.xpi ... "
 . ./build.sh > /dev/null
 echo done
 
