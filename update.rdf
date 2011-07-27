@@ -2,22 +2,22 @@
 <RDF:RDF xmlns:NS1="http://www.mozilla.org/2004/em-rdf#"
          xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <RDF:Description RDF:about="rdf:#$fYJ.43"
-                   NS1:version="1.0r29">
-    <NS1:targetApplication RDF:resource="rdf:#$iYJ.43"/>
-  </RDF:Description>
-  <RDF:Seq RDF:about="rdf:#$eYJ.43">
-    <RDF:li RDF:resource="rdf:#$fYJ.43"/>
+  <RDF:Seq RDF:about="rdf:#$4s.Tn3">
+    <RDF:li RDF:resource="rdf:#$5s.Tn3"/>
   </RDF:Seq>
-  <RDF:Description RDF:about="urn:mozilla:extension:zotero-item-histor@mystery-lab.com"
-                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAIqCIUSfTCFDAGODmxOI0Gj/OirQf0anBx+DBOrN98Ym8WELaEKtmWMzz5KhMmSuEG5MoJwyuEQUnkOc/rpLzfmIS+IqO/KpdeC954OmHOVcWUIo4WEvsPqCRPN3V0SmHv103Qb3/Efei9hzpbYHY61otWQW/HtgMrymB7QCx22a">
-    <NS1:updates RDF:resource="rdf:#$eYJ.43"/>
+  <RDF:Description RDF:about="rdf:#$5s.Tn3"
+                   NS1:version="1.0r31">
+    <NS1:targetApplication RDF:resource="rdf:#$8s.Tn3"/>
   </RDF:Description>
-  <RDF:Description RDF:about="rdf:#$iYJ.43"
+  <RDF:Description RDF:about="urn:mozilla:extension:zotero-item-histor@mystery-lab.com"
+                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAE5sJDhfo5jgBN5hjUmvhAmOI/RQG6fonv9TtlplU79eSJevGRymnp3mPOztIY9WURl4AELbEPPk8wXO3rVFVsLveo3Wpa34F+QCctGAGR3gEnuQcyFpm25KYlUA8CB4grm65b7Scc7yAreGxqKvvC4JqSY9OLOImC75aDPpbqmH">
+    <NS1:updates RDF:resource="rdf:#$4s.Tn3"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$8s.Tn3"
                    NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    NS1:minVersion="3.6"
                    NS1:maxVersion="6.0.*"
                    NS1:updateLink="http://gsl-nagoya-u.net/http/pub/zotero-item-history.xpi"
                    NS1:updateInfoURL="http://gsl-nagoya-u.net/http/pub/zotero-item-history.xhtml"
-                   NS1:updateHash="sha1:c0abfeec5c8ce7bc4d7e29190a53449b50338e0c" />
+                   NS1:updateHash="sha1:1a93beea45d2d0b83c80fa03548dc812ade0ef62" />
 </RDF:RDF>
