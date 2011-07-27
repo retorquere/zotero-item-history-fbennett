@@ -8,7 +8,7 @@
   <groupbox align="center" orient="horizontal">
     <vbox>
       <text value="Zotero Item History" style="font-weight: bold; font-size: x-large;"/>
-      <text value="&version; 0.8"/>
+      <text value="&version; 1.0r29"/>
       <separator class="thin"/>
       <hbox>
         <vbox>
