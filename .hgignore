@@ -7,3 +7,7 @@
 ^about.xul
 ^install.bak
 ^update.bak
+^chrome/content/about.xul
+^install.rdf
+^update.rdf
+^updateInfo.xhtml
