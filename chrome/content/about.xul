@@ -4,11 +4,11 @@
 
 <!DOCTYPE dialog SYSTEM "chrome://zotero-item-history/locale/about.dtd">
 
-<dialog title="&about; Zotero Item History" orient="vertical" autostretch="always" onload="sizeToContent()" buttons="accept" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<dialog title="&about; Item History for Zotero" orient="vertical" autostretch="always" onload="sizeToContent()" buttons="accept" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
   <groupbox align="center" orient="horizontal">
     <vbox>
-      <text value="Zotero Item History" style="font-weight: bold; font-size: x-large;"/>
-      <text value="&version; 1.0r47"/>
+      <text value="Item History for Zotero" style="font-weight: bold; font-size: x-large;"/>
+      <text value="&version; 1.0r48"/>
       <separator class="thin"/>
       <hbox>
         <vbox>
@@ -30,7 +30,7 @@
 	  <label value="Overview" style="font-weight: bold;"/>
       <separator class="thin"/>
 	  <description style="width: 600px;">
-		Zotero Item History maintains a record of Zotero items visited from a
+		Item History for Zotero maintains a record of Zotero items visited from a
 		given
 		<image src="chrome://zotero-item-history/skin/treesource-library.png"/>&#xa0;(library),
 		<image src="chrome://zotero-item-history/skin/treesource-collection.png"/>&#xa0;(collection)

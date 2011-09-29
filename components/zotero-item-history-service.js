@@ -5,14 +5,14 @@
                      Faculty of Law, Nagoya University, Japan
                      http://twitter.com/#!/fgbjr
     
-    This file is part of Zotero Item History.
+    This file is part of Item History for Zotero.
     
-    Zotero Item History is free software: you can redistribute it and/or modify
+    Item History for Zotero is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
     
-    Zotero Item History is distributed in the hope that it will be useful,
+    Item History for Zotero is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU Affero General Public License for more details.
@@ -83,7 +83,7 @@ function ZoteroItemHistoryService() {
 }
 
 ZoteroItemHistoryService.prototype = {
-  classDescription: 'Zotero Item History Extension',
+  classDescription: 'Item History for Zotero Extension',
   classID:          Components.ID("{487b2ad0-8426-11e0-9d78-0800200c9a66}"),
   contractID:       '@mysterylab/ZoteroItemHistoryService;1',
   service: true,

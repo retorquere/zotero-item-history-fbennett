@@ -150,7 +150,7 @@ ZoteroItemHistory.prototype.windowInit = function (window, document) {
 
 		var help = document.createElement("menuitem");
 		help.setAttribute("onclick", "window.openDialog('chrome://zotero-item-history/content/about.xul', 'about', '')");
-		help.setAttribute("label", "About Zotero Item History");
+		help.setAttribute("label", "About Item History for Zotero");
 		var helpsep = document.createElement("menuseparator");
 		globalcontextmenu.appendChild(helpsep);
 		globalcontextmenu.appendChild(help);
