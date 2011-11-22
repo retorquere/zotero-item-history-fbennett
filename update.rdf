@@ -1,23 +1,26 @@
 <?xml version="1.0"?>
-<RDF:RDF xmlns:NS1="http://www.mozilla.org/2004/em-rdf#"
-         xmlns:NC="http://home.netscape.com/NC-rdf#"
-         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <RDF:Description RDF:about="urn:mozilla:extension:zotero-item-history@mystery-lab.com"
-                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAG9a9tkWZWjhP6zMHaz49eRluE0sMZpmO/RGx/swoq+egObyJegf6AZBaYSXIn714P5Fx0Iu0fa2onMt67tXXHnomIpFA/bhBJw40axeWwIsWnj8k3WKQImGK9EtU/cEPBtewX4edb8kFm1lpfMaITNDkx64w1Nb7LjXLFRR0Q8K">
-    <NS1:updates RDF:resource="rdf:#$VMppo2"/>
-  </RDF:Description>
-  <RDF:Seq RDF:about="rdf:#$VMppo2">
-    <RDF:li RDF:resource="rdf:#$WMppo2"/>
-  </RDF:Seq>
-  <RDF:Description RDF:about="rdf:#$ZMppo2"
-                   NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
-                   NS1:minVersion="3.6"
-                   NS1:maxVersion="6.0.*"
-                   NS1:updateLink="http://gsl-nagoya-u.net/http/pub/zotero-item-history.xpi"
-                   NS1:updateInfoURL="http://gsl-nagoya-u.net/http/pub/zotero-item-history.xhtml"
-                   NS1:updateHash="sha1:0e8992b4725a4b930250c4d677df7d7eb502b5aa" />
-  <RDF:Description RDF:about="rdf:#$WMppo2"
-                   NS1:version="1.0.49">
-    <NS1:targetApplication RDF:resource="rdf:#$ZMppo2"/>
-  </RDF:Description>
+<RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns="http://www.mozilla.org/2004/em-rdf#">
+<!-- Zotero Extension -->
+<RDF:Description about="urn:mozilla:extension:zotero-item-history@mystery-lab.com">
+  <updates>
+    <RDF:Seq>
+      <RDF:li>
+        <RDF:Description>
+          <version>1.0.##REVISION##</version>
+          <targetApplication>
+            <RDF:Description>
+              <id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</id>
+              <minVersion>3.6</minVersion>
+              <maxVersion>8.*</maxVersion>
+              <updateLink>http://gsl-nagoya-u.net/http/pub/zotero-item-history.xpi</updateLink>
+			  <updateInfoURL>http://gsl-nagoya-u.net/http/pub/zotero-item-history.xhtml</updateInfoURL>
+              <updateHash>sha1:##SHA1HASH##</updateHash>
+            </RDF:Description>
+          </targetApplication>
+        </RDF:Description>
+      </RDF:li>
+    </RDF:Seq>
+  </updates>
+</RDF:Description>
 </RDF:RDF>
