@@ -1,26 +1,23 @@
 <?xml version="1.0"?>
-<RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns="http://www.mozilla.org/2004/em-rdf#">
-<!-- Zotero Extension -->
-<RDF:Description about="urn:mozilla:extension:zotero-item-history@mystery-lab.com">
-  <updates>
-    <RDF:Seq>
-      <RDF:li>
-        <RDF:Description>
-          <version>1.0.local</version>
-          <targetApplication>
-            <RDF:Description>
-              <id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</id>
-              <minVersion>3.6</minVersion>
-              <maxVersion>10.*</maxVersion>
-              <updateLink>http://gsl-nagoya-u.net/http/pub/zotero-item-history.xpi</updateLink>
-			  <updateInfoURL>http://gsl-nagoya-u.net/http/pub/zotero-item-history.xhtml</updateInfoURL>
-              <updateHash>sha1:##SHA1HASH##</updateHash>
-            </RDF:Description>
-          </targetApplication>
-        </RDF:Description>
-      </RDF:li>
-    </RDF:Seq>
-  </updates>
-</RDF:Description>
+<RDF:RDF xmlns:NS1="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="urn:mozilla:extension:zotero-item-history@mystery-lab.com"
+                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAAWnL/BYZp8gO/QXDN8L0dhou+gBBEIV42rDN5BwXHKI84QC9YPecHyLgoCOCTxrGxSZ8Pc8Q/ltlw9YONlRayXBAm3L6aipiF1Ds5EvSoelfj1hixlwQAQHmp+flFw12VLNrz9bQ5+iI08DtCVY9A79pi/XIURxs2Ju9zdIOlEU">
+    <NS1:updates RDF:resource="rdf:#$K9JbZ"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$O9JbZ"
+                   NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   NS1:minVersion="3.6"
+                   NS1:maxVersion="10.*"
+                   NS1:updateLink="http://gsl-nagoya-u.net/http/pub/zotero-item-history.xpi"
+                   NS1:updateInfoURL="http://gsl-nagoya-u.net/http/pub/zotero-item-history.xhtml"
+                   NS1:updateHash="sha1:fcb316e57dc5e16bd82830a3796810d0baafaf26" />
+  <RDF:Seq RDF:about="rdf:#$K9JbZ">
+    <RDF:li RDF:resource="rdf:#$L9JbZ"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="rdf:#$L9JbZ"
+                   NS1:version="1.0.57">
+    <NS1:targetApplication RDF:resource="rdf:#$O9JbZ"/>
+  </RDF:Description>
 </RDF:RDF>

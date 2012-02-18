@@ -40,7 +40,7 @@ var appInfo = Components.classes["@mozilla.org/xre/app-info;1"].
     platformVersion = appInfo.platformVersion;
 var versionComparator = Components.classes["@mozilla.org/xpcom/version-comparator;1"]
 	.getService(Components.interfaces.nsIVersionComparator);
-var WrappedZoteroItemHistory.isFx4 = versionComparator.compare(platformVersion, "2.0a1") >= 0;
+WrappedZoteroItemHistory.isFx4 = versionComparator.compare(platformVersion, "2.0a1") >= 0;
 
 if(WrappedZoteroItemHistory.isFx4) {
 	Components.utils.import("resource://gre/modules/AddonManager.jsm");
