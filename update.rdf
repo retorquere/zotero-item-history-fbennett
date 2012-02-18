@@ -2,22 +2,22 @@
 <RDF:RDF xmlns:NS1="http://www.mozilla.org/2004/em-rdf#"
          xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <RDF:Seq RDF:about="rdf:#$eWD.11">
-    <RDF:li RDF:resource="rdf:#$fWD.11"/>
-  </RDF:Seq>
-  <RDF:Description RDF:about="urn:mozilla:extension:zotero-item-history@mystery-lab.com"
-                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAL0fB7zUfnX3fOZhWqKjw3evCsrhZVgkJwlQHuujzx4FNMbPj30I8ylED+eAFbah/c+daaEXObijVirFNgGAjLnL64sJYdgtFA+OXvFKXmgZ1o92V4M9yFYVa/S+9BXJ5AVkapCf845a7vCAkqkN5Q7KxYCosHvGHcL7IQ+9Gby4">
-    <NS1:updates RDF:resource="rdf:#$eWD.11"/>
+  <RDF:Description RDF:about="rdf:#$E+Y0q"
+                   NS1:version="1.0.55">
+    <NS1:targetApplication RDF:resource="rdf:#$H+Y0q"/>
   </RDF:Description>
-  <RDF:Description RDF:about="rdf:#$fWD.11"
-                   NS1:version="1.0.53">
-    <NS1:targetApplication RDF:resource="rdf:#$iWD.11"/>
-  </RDF:Description>
-  <RDF:Description RDF:about="rdf:#$iWD.11"
+  <RDF:Description RDF:about="rdf:#$H+Y0q"
                    NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    NS1:minVersion="3.6"
                    NS1:maxVersion="10.*"
                    NS1:updateLink="http://gsl-nagoya-u.net/http/pub/zotero-item-history.xpi"
                    NS1:updateInfoURL="http://gsl-nagoya-u.net/http/pub/zotero-item-history.xhtml"
-                   NS1:updateHash="sha1:6809480e97c25686fa2031a2cb9187e4a9d8dd08" />
+                   NS1:updateHash="sha1:5f53c440edeb99c6fcb6f85580fc8c3e4cfc2a31" />
+  <RDF:Description RDF:about="urn:mozilla:extension:zotero-item-history@mystery-lab.com"
+                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBACcVXUKsPRzcDF7SCoWR5Zi3Sy+6/BW94Te7UcXsL/R08z+VFilY3smc1+uvcPxTcVKaRCgkHq+EcXpZOX9CdmHTjZdaHKMTzX72rrYbmq6oDyoSTgR6ng5vKZHOhkXBe17WkheAFxb4Ne8ocgwtZxhe/rxowKTFiA6oIB1gsReo">
+    <NS1:updates RDF:resource="rdf:#$D+Y0q"/>
+  </RDF:Description>
+  <RDF:Seq RDF:about="rdf:#$D+Y0q">
+    <RDF:li RDF:resource="rdf:#$E+Y0q"/>
+  </RDF:Seq>
 </RDF:RDF>
