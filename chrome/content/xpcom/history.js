@@ -47,10 +47,12 @@ ZoteroItemHistory.prototype.init = function () {
 
 	// Stuff shamelessly borrowed from Zotero (zotero.js)
 	this.mainThread = Components.classes["@mozilla.org/thread-manager;1"].getService().mainThread;
-	var appInfo =
-		Components.classes["@mozilla.org/xre/app-info;1"].
-		getService(Components.interfaces.nsIXULAppInfo);
-	this.isFx4 = appInfo.platformVersion[0].slice(0, 1) >= 2;
+    var appInfo = Components.classes["@mozilla.org/xre/app-info;1"].
+	    getService(Components.interfaces.nsIXULAppInfo),
+    platformVersion = appInfo.platformVersion;
+    var versionComparator = Components.classes["@mozilla.org/xpcom/version-comparator;1"]
+	    .getService(Components.interfaces.nsIVersionComparator);
+    this.isFx4 = versionComparator.compare(platformVersion, "2.0a1") >= 0;
 
 	Zotero.debug("[ZoteroItemHistory] appInfo: " + appInfo.platformVersion[0]);
 
