@@ -2,22 +2,22 @@
 <RDF:RDF xmlns:NS1="http://www.mozilla.org/2004/em-rdf#"
          xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <RDF:Description RDF:about="rdf:#$Fn2Fr"
+  <RDF:Seq RDF:about="rdf:#$EmoLo2">
+    <RDF:li RDF:resource="rdf:#$FmoLo2"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="rdf:#$FmoLo2"
+                   NS1:version="1.0.60">
+    <NS1:targetApplication RDF:resource="rdf:#$ImoLo2"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mozilla:extension:zotero-item-history@mystery-lab.com"
+                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAFv2xwuvWkaF2G9afCTwQvOT35QKhCU64tiSturdIov9FQu1XYogTI+sgg+Yr4idp/TaLgLZ5VqbHu3DUD1L2y5+Q0HyPkk9OoOV1PNDNQXE2XXAv3KWmgPpV2Cq4aHitEWSty1ysDvkxcHEhh3MBf/6NKJ3sW6HdR0rJQQGSlBP">
+    <NS1:updates RDF:resource="rdf:#$EmoLo2"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$ImoLo2"
                    NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    NS1:minVersion="3.6"
                    NS1:maxVersion="10.*"
                    NS1:updateLink="http://gsl-nagoya-u.net/http/pub/zotero-item-history.xpi"
                    NS1:updateInfoURL="http://gsl-nagoya-u.net/http/pub/zotero-item-history.xhtml"
-                   NS1:updateHash="sha1:50cede48c0d46b1c7f83c8d7b5ce48afd86ec0d1" />
-  <RDF:Description RDF:about="urn:mozilla:extension:zotero-item-history@mystery-lab.com"
-                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAB3qRhzchevtfgN4ydDGFPOo6qmHDGPULiLOX621g0F6wGdapoUD+76PuQgzd8qg19Y+E2cH56i3gn/I7cW0gjdbmFf7ihTJ700/Rfx+2VEC61KZq9kSxAguusSIHuHPiomDPgghaM4vrUXqTHyUAKiBoi7TN5bhv9pQTH7vMtv+">
-    <NS1:updates RDF:resource="rdf:#$Bn2Fr"/>
-  </RDF:Description>
-  <RDF:Seq RDF:about="rdf:#$Bn2Fr">
-    <RDF:li RDF:resource="rdf:#$Cn2Fr"/>
-  </RDF:Seq>
-  <RDF:Description RDF:about="rdf:#$Cn2Fr"
-                   NS1:version="1.0.59">
-    <NS1:targetApplication RDF:resource="rdf:#$Fn2Fr"/>
-  </RDF:Description>
+                   NS1:updateHash="sha1:979251bd661132b715143554d8884c3b744a9611" />
 </RDF:RDF>
