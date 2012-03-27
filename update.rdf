@@ -2,22 +2,22 @@
 <RDF:RDF xmlns:NS1="http://www.mozilla.org/2004/em-rdf#"
          xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <RDF:Description RDF:about="rdf:#$1G7M81"
-                   NS1:version="1.0.58">
-    <NS1:targetApplication RDF:resource="rdf:#$4G7M81"/>
-  </RDF:Description>
-  <RDF:Description RDF:about="rdf:#$4G7M81"
+  <RDF:Description RDF:about="rdf:#$Fn2Fr"
                    NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    NS1:minVersion="3.6"
                    NS1:maxVersion="10.*"
                    NS1:updateLink="http://gsl-nagoya-u.net/http/pub/zotero-item-history.xpi"
                    NS1:updateInfoURL="http://gsl-nagoya-u.net/http/pub/zotero-item-history.xhtml"
-                   NS1:updateHash="sha1:97eebbdc08aa65319d9bbe520c6b6a6b29ce8917" />
+                   NS1:updateHash="sha1:50cede48c0d46b1c7f83c8d7b5ce48afd86ec0d1" />
   <RDF:Description RDF:about="urn:mozilla:extension:zotero-item-history@mystery-lab.com"
-                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAColnNsbQvXnUlAwLj7IXBKJNEF3pWbx9a3HHq3dOXLNprlf/qiu30w24WWL2h2gYdgdeHC0BxLoHbUuwr3q+HkZ3He9QwEJyFKC+jvr9DzqquboxHjPjlrF4bctigBjgz4j7vbaVLIiIkFfZ87/RA0/zjb7bGFF3sqIKLw/Glph">
-    <NS1:updates RDF:resource="rdf:#$0G7M81"/>
+                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAB3qRhzchevtfgN4ydDGFPOo6qmHDGPULiLOX621g0F6wGdapoUD+76PuQgzd8qg19Y+E2cH56i3gn/I7cW0gjdbmFf7ihTJ700/Rfx+2VEC61KZq9kSxAguusSIHuHPiomDPgghaM4vrUXqTHyUAKiBoi7TN5bhv9pQTH7vMtv+">
+    <NS1:updates RDF:resource="rdf:#$Bn2Fr"/>
   </RDF:Description>
-  <RDF:Seq RDF:about="rdf:#$0G7M81">
-    <RDF:li RDF:resource="rdf:#$1G7M81"/>
+  <RDF:Seq RDF:about="rdf:#$Bn2Fr">
+    <RDF:li RDF:resource="rdf:#$Cn2Fr"/>
   </RDF:Seq>
+  <RDF:Description RDF:about="rdf:#$Cn2Fr"
+                   NS1:version="1.0.59">
+    <NS1:targetApplication RDF:resource="rdf:#$Fn2Fr"/>
+  </RDF:Description>
 </RDF:RDF>

@@ -78,7 +78,7 @@ ZoteroItemHistory.prototype.windowInit = function (window, document) {
 			this.buttons[i].setAttribute("label", "");
 			this.buttons[i].setAttribute("class", "zotero-item-history-button");
 			this.buttons[i].setAttribute("tooltip", "zotero-item-history-tooltip-" + buttonName);
-			this.Zotero.debug("XXX Set frigging tooltip to: " + "zotero-item-history-tooltip-" + buttonName);
+			//this.Zotero.debug("XXX Set frigging tooltip to: " + "zotero-item-history-tooltip-" + buttonName);
 			this.enableButton(buttonName, false);
 		}
 
